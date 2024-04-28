@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1868,1186</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1205,2620</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_03_ExtractDT_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,20 +114,20 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_GetList" sap:VirtualizedContainerService.HintSize="514,750" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_GetList" sap:VirtualizedContainerService.HintSize="514,2555" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get List Strat. .&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 의약품안전나라 &gt; HOMEPAGE" sap:VirtualizedContainerService.HintSize="452,65" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="272db589-a2ca-4505-8392-f95406fbfb7e" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 의약품안전나라 &gt; HOMEPAGE" sap:VirtualizedContainerService.HintSize="452,1870" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="272db589-a2ca-4505-8392-f95406fbfb7e" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,1700" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,1573" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,7 +171,7 @@
                 <uix:TargetAnchorable BrowserURL="https://nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="1457, 706, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnSearch' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnSearch' tag='BUTTON' type='submit' class='btn_small' aaname='검색' check:innerText='검색' /&gt;" Guid="6d0ef47f-ee43-45b7-a734-918733b1b4c3" InformativeScreenshot="810dc77c5ca6e9257463a9c99a7c9e91.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt업체명]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='업체명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='업체명_URL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="272db589-a2ca-4505-8392-f95406fbfb7e" Timeout="3" Version="V3">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt업체명]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='업체명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='업체명_URL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="272db589-a2ca-4505-8392-f95406fbfb7e" Timeout="3" Version="V3">
               <uix:NExtractData.NextLink>
                 <uix:TargetAnchorable BrowserURL="https://nedrug.mfds.go.kr/pbp/CCBAO01/getList?totalPages=6&amp;page=1&amp;limit=10&amp;sort=&amp;sortOrder=&amp;searchYn=&amp;searchTypeCode=A&amp;entpName=&amp;itemName=&amp;dispsDateStart=2024-03-01&amp;dispsDateEnd=2024-04-30" DesignTimeRectangle="1210, 761, 35, 35" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl class='page_next' parentid='paging_div' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl class='page_next' parentid='paging_div' tag='BUTTON' type='button' aaname='다음페이지' check:innerText='다음페이지' /&gt;" Guid="60e930c1-6493-4de5-a391-992f31db0997" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
               </uix:NExtractData.NextLink>
@@ -179,7 +179,6 @@
                 <uix:TargetAnchorable BrowserURL="https://nedrug.mfds.go.kr/pbp/CCBAO01/getList?totalPages=6&amp;page=1&amp;limit=10&amp;sort=&amp;sortOrder=&amp;searchYn=&amp;searchTypeCode=A&amp;entpName=&amp;itemName=&amp;dispsDateStart=2024-03-01&amp;dispsDateEnd=2024-04-30" DesignTimeRectangle="630, 742, 930, 751" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='JColResizer0' tag='TABLE' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="259b284c-d93e-4ee1-8b58-ab626d1cf1a5" InformativeScreenshot="323959839d0f72c62843bbdc028ad085.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <uix:NGetUrl CurrentUrl="[out_str검색URL]" DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="NGetUrl_1" Version="V3" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -188,7 +187,7 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
