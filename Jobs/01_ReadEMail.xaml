@@ -3,14 +3,23 @@
     <x:Property Name="in_strJob" Type="InArgument(x:String)" />
     <x:Property Name="out_dic날짜" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="out_list키워드" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="in_sstrPW" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_strID" Type="InArgument(x:String)" />
+    <x:Property Name="out_blSE" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <this:_01_ReadEMail.in_strJob>
     <InArgument x:TypeArguments="x:String" />
   </this:_01_ReadEMail.in_strJob>
+  <this:_01_ReadEMail.in_sstrPW>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:_01_ReadEMail.in_sstrPW>
+  <this:_01_ReadEMail.in_strID>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_01_ReadEMail.in_strID>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1205,2738</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1215,3592</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_00_메일수신_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,12 +124,10 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_01_ReadEMail" sap:VirtualizedContainerService.HintSize="603,2673" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_01_ReadEMail" sap:VirtualizedContainerService.HintSize="654,3527" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strMail" />
-      <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMail" />
-      <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="listView" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listJobMail" />
     </Sequence.Variables>
@@ -129,7 +136,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="541,181" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Read E-Mail Strat. .&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,181" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Read E-Mail Strat. .&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,15 +144,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="UiPath_Gmail" CacheStrategy="None" DisplayName="Get Credential" FolderPath="sbzkdl@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="541,183" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPW]" Username="[strID]" />
-    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="이메일, 보안 암호&#xA;날짜순 - 언제부터&#xA;맨 위 - 갯수&#xA;필터식 - 조건 ex) &quot;FROM 'rpa.sj.jeong@gmail.com'&quot;&#xA;메일 폴더 - Inbox(받은편지함), 다른 것들도 찾아보기(라벨)&#xA;&#xA;OR (SUBJECT TEST) (SUBJECT TEST1)&#xA;&#xA;- Imap 서버명 : imap.gmail.com&#xA;- Imap 포트 : 993" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[strID]" EnableSSL="True" FilterExpression="FROM 'rpa.sj.jeong@gmail.com'" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="541,302" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" Messages="[listMail]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[sstrPW]" Server="imap.gmail.com" Top="10">
+    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="이메일, 보안 암호&#xA;날짜순 - 언제부터&#xA;맨 위 - 갯수&#xA;필터식 - 조건 ex) &quot;FROM 'rpa.sj.jeong@gmail.com'&quot;&#xA;메일 폴더 - Inbox(받은편지함), 다른 것들도 찾아보기(라벨)&#xA;&#xA;OR (SUBJECT TEST) (SUBJECT TEST1)&#xA;&#xA;- Imap 서버명 : imap.gmail.com&#xA;- Imap 포트 : 993" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[in_strID]" EnableSSL="True" FilterExpression="FROM 'rpa.sj.jeong@gmail.com'" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="592,302" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" Messages="[listMail]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="imap.gmail.com" Top="10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetIMAPMailMessages>
-    <Assign sap:VirtualizedContainerService.HintSize="541,122" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap:VirtualizedContainerService.HintSize="592,122" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[in_strJob]</OutArgument>
       </Assign.To>
@@ -153,14 +159,14 @@
         <InArgument x:TypeArguments="x:String">["의약품 안전나라"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="해당 메일 가져오기 | Sequence" sap:VirtualizedContainerService.HintSize="541,65" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="해당 메일 가져오기 | Sequence" sap:VirtualizedContainerService.HintSize="592,1102" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign sap:VirtualizedContainerService.HintSize="530,122" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[listJobMail]</OutArgument>
         </Assign.To>
@@ -168,16 +174,46 @@
           <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[listMail.AsEnumerable().Where(Function(x) x.Subject.ToString.Contains(in_strJob.Split(" "c)(0).Trim)).ToList]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[strMail]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[listJobMail(0).Body]</InArgument>
-        </Assign.Value>
-      </Assign>
+      <If Condition="[listJobMail.Count &gt;= 1]" sap:VirtualizedContainerService.HintSize="530,852" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strMail]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[listJobMail(0).Body]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,501" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,181" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;No Work Order. .&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[out_blSE]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Throw Exception="[New SystemException(&quot;[No Work Order]&quot;)]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </Sequence>
+        </If.Else>
+      </If>
     </Sequence>
-    <Assign sap:VirtualizedContainerService.HintSize="541,122" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="592,122" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[listView]</OutArgument>
       </Assign.To>
@@ -185,7 +221,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[strMail.Split("-"c).ToList]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="항목 추출 | Sequence" sap:VirtualizedContainerService.HintSize="541,743" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="항목 추출 | Sequence" sap:VirtualizedContainerService.HintSize="592,743" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str키워드" />
       </Sequence.Variables>
