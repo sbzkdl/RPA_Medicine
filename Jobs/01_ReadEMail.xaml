@@ -5,7 +5,7 @@
     <x:Property Name="out_list키워드" Type="OutArgument(scg:List(x:String))" />
     <x:Property Name="in_sstrPW" Type="InArgument(ss:SecureString)" />
     <x:Property Name="in_strID" Type="InArgument(x:String)" />
-    <x:Property Name="out_blSE" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_blWorkSE" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <this:_01_ReadEMail.in_strJob>
     <InArgument x:TypeArguments="x:String" />
@@ -202,7 +202,7 @@
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,181" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;No Work Order. .&quot;]" />
             <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[out_blSE]</OutArgument>
+                <OutArgument x:TypeArguments="x:Boolean">[out_blWorkSE]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>

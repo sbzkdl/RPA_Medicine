@@ -553,7 +553,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="1. Read E-Mail&#xA;2. Copy Original File&#xA;3. Get Company List from Web" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,119" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="1. Read E-Mail&#xA;2. Copy Original File&#xA;3. Get Company List from Web" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="721,3351" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="675,2906" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -799,8 +799,8 @@
                                         <InArgument x:TypeArguments="x:String" x:Key="in_strID">
                                           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
                                         </InArgument>
-                                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_blSE">
-                                          <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="blSE" />
+                                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_blWorkSE">
+                                          <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="blWorkSE" />
                                         </OutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
@@ -904,7 +904,7 @@
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                                 </ActivityAction.Argument>
-                                <Assign sap2010:Annotation.AnnotationText="Failures during the initialization are considered system exceptions and lead to the End Process state, thus finalizing the execution." DisplayName="Assign SystemException" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                <Assign sap2010:Annotation.AnnotationText="Failures during the initialization are considered system exceptions and lead to the End Process state, thus finalizing the execution." DisplayName="Assign SystemException" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_21">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
                                   </Assign.To>
@@ -960,7 +960,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="6. Write Total &amp; Filtering DataTable to Excel&#xA;7. Create HTML &amp; Send E-Mail" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="596,1378" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="6. Write Total &amp; Filtering DataTable to Excel&#xA;7. Create HTML &amp; Send E-Mail" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,150" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
                                 <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="550,1222" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -976,7 +976,7 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <If Condition="[blSE = False]" sap:VirtualizedContainerService.HintSize="450,773" sap2010:WorkflowViewState.IdRef="If_16">
+                                      <If Condition="[blWorkSE = False]" sap:VirtualizedContainerService.HintSize="450,773" sap2010:WorkflowViewState.IdRef="If_16">
                                         <If.Then>
                                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -1016,8 +1016,8 @@
                                                 <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
                                                   <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
                                                 </InArgument>
-                                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_blSE">
-                                                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="blSE" />
+                                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_blWorkSE">
+                                                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="blWorkSE" />
                                                 </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
@@ -1054,7 +1054,7 @@
                                                   <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
                                                 </InArgument>
                                                 <InArgument x:TypeArguments="x:Boolean" x:Key="in_blSE">
-                                                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="blSE" />
+                                                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="blWorkSE" />
                                                 </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
@@ -1215,7 +1215,7 @@
       <Variable x:TypeArguments="x:Int32" Name="intTotalCount" />
       <Variable x:TypeArguments="x:Int32" Name="intSuccessCount" />
       <Variable x:TypeArguments="x:Int32" Name="intFailCount" />
-      <Variable x:TypeArguments="x:Boolean" Name="blSE">
+      <Variable x:TypeArguments="x:Boolean" Name="blWorkSE">
         <Variable.Default>
           <Literal x:TypeArguments="x:Boolean" />
         </Variable.Default>
