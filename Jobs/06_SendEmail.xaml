@@ -27,7 +27,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1215,2339</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,2275</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Email_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -143,7 +143,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_06_SendEmail" sap:VirtualizedContainerService.HintSize="610,2274" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_06_SendEmail" sap:VirtualizedContainerService.HintSize="610,2210" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtTest" />
       <Variable x:TypeArguments="x:String" Name="strDTHTML" />
@@ -153,7 +153,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548,65" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Send E-Mail Strat. .&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Send E-Mail Strat. .&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -161,15 +161,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,1150" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,1094" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="512,991" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="512,983" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[in_blWorkSE = False]" sap:VirtualizedContainerService.HintSize="450,906" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[in_blWorkSE = False]" sap:VirtualizedContainerService.HintSize="450,898" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,296" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
@@ -194,19 +194,19 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="416,449" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,441" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\06-1_CreateHTML.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Jobs\06-1_CreateHTML.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\06-1_CreateHTML.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Jobs\06-1_CreateHTML.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <OutArgument x:TypeArguments="x:String" x:Key="out_strDTHTML">[strDTHTML]</OutArgument>
                     <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt당월이슈">[in_dt당월이슈]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[String.Format(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일본문_성공&quot;).ToString,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;css&quot;).ToString,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;strDTHTML&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" DisplayName="메일 보내기 | Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,211" sap2010:WorkflowViewState.IdRef="SendMail_11" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일제목_성공&quot;).ToString, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_str작성자&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" To="[in_Config(&quot;과제제출&quot;).ToString]">
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일본문_성공&quot;).ToString,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;css&quot;).ToString,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;strDTHTML&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" DisplayName="메일 보내기 | Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,211" sap2010:WorkflowViewState.IdRef="SendMail_11" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일제목_성공&quot;).ToString, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_str작성자&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" To="[in_Config(&quot;과제제출&quot;).ToString]">
                   <ui:SendMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                       <InArgument x:TypeArguments="x:String">[in_str결과파일]</InArgument>
@@ -240,7 +240,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[String.Format(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일본문_실패&quot;).ToString,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;css&quot;).ToString,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;strDTHTML&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" DisplayName="테스트 메일 보내기 | Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,211" sap2010:WorkflowViewState.IdRef="SendMail_15" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일제목&quot;).ToString, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_str작성자&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" To="[in_Config(&quot;test&quot;).ToString]">
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일본문_실패&quot;).ToString,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;css&quot;).ToString,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;strDTHTML&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" DisplayName="테스트 메일 보내기 | Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,211" sap2010:WorkflowViewState.IdRef="SendMail_15" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일제목&quot;).ToString, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_str작성자&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" To="[in_Config(&quot;test&quot;).ToString]">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">[in_str결과파일]</InArgument>
@@ -267,7 +267,7 @@
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt당월이슈">[in_dt당월이슈]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[String.Format(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일본문_성공&quot;).ToString,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;css&quot;).ToString,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;strDTHTML&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" DisplayName="테스트 메일 보내기 | Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,211" sap2010:WorkflowViewState.IdRef="SendMail_10" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일제목&quot;).ToString, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_str작성자&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" To="[in_Config(&quot;test&quot;).ToString]">
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="- SMTP 서버명 : smtp.gmail.com, smtp.naver.com&#xA;- SMTP 포트 : 587" Body="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일본문_성공&quot;).ToString,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;css&quot;).ToString,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;strDTHTML&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" DisplayName="테스트 메일 보내기 | Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,211" sap2010:WorkflowViewState.IdRef="SendMail_10" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_Config(&quot;메일제목&quot;).ToString, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_strJob, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Today.ToString(&quot;yyyy/MM&quot;),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in_str작성자&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)]" To="[in_Config(&quot;test&quot;).ToString]">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">[in_str결과파일]</InArgument>
